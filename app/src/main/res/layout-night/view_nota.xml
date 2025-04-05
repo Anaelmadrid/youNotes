@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="10dp"
+	android:layout_margin="10dp">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:elevation="20dp">
+
+		<jp.wasabeef.richeditor.RichEditor
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="50dp"
+			android:id="@+id/RET_view_nota"
+			android:paddingBottom="20dp"
+			style="@android:style/Theme.DeviceDefault.DayNight"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#F21B1B1B">
+
+	<HorizontalScrollView
+		android:id="@+id/tools"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:scrollbars="none"
+		android:background="#F21B1B1B">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:background="#F21B1B1B">
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:padding="5dp"
+				android:id="@+id/btn_setBold"
+				android:src="@drawable/ic_format_bold"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_setItalic"
+				android:src="@drawable/ic_italic"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_setunderline"
+				android:src="@drawable/ic_format_underline"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_setlink"
+				android:src="@drawable/ic_link"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_clearFormat"
+				android:src="@drawable/ic_format_clear"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_undo"
+				android:src="@drawable/ic_undo"/>
+
+			<ImageButton
+				android:layout_width="48dp"
+				android:layout_height="48dp"
+				android:text="0"
+				android:scaleType="center"
+				android:layout_margin="5dp"
+				android:id="@+id/btn_redo"
+				android:src="@drawable/ic_redo"/>
+
+		</LinearLayout>
+
+	</HorizontalScrollView>
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@id/tools"
+		android:layout_alignParentTop="true"
+		android:fillViewport="true">
+
+		<jp.wasabeef.richeditor.RichEditor
+			android:id="@+id/RETL"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@android:color/transparent"
+			android:gravity="top|start"
+			android:scrollbars="vertical"
+			android:layout_marginTop="40dp"
+			android:layout_marginBottom="40dp"/>
+
+	</ScrollView>
+
+</RelativeLayout>
+

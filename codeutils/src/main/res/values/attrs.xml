@@ -1,0 +1,3 @@
+<resources>
+    <attr name="customEditTextStyle" format="reference"/>
+</resources>

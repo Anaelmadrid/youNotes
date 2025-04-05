@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores para el tema de día -->
+    <color name="colorPrimaryDay">#000000</color>
+    <color name="colorPrimaryDarkDay">#81000000</color>
+    <color name="colorAccentDay">#00B8E7</color>
+    <color name="colorBackgroundDay">#000000</color>
+    <!-- Colores para el tema de noche -->
+    <color name="colorPrimaryNight">#1A237E</color>
+    <color name="colorPrimaryDarkNight">#0D47A1</color>
+    <color name="colorAccentNight">#FF4081</color>
+    <color name="colorBackgroundNight">#000000</color>
+    <color name="colorLight">#FFFFFFFF</color>
+    <color name="light_grey">#4f000000</color>
+</resources>

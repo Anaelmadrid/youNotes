@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><resources>
+    <string name="app_name">YouNotes</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="erro_al_lanzar_activity">The activity could not be called due to</string>
+    
+</resources>

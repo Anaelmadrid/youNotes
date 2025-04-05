@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+	</style>
+        <!-- Estilo base para el tema de la aplicación -->
+        <style name="MyCustomTheme">
+            <!-- Atributos del tema -->
+            <item name="android:windowBackground">@color/myWindowBackground</item>
+            <item name="android:colorPrimary">@color/myPrimaryColor</item>
+            <item name="android:colorPrimaryDark">@color/myPrimaryDarkColor</item>
+            <item name="android:colorAccent">@color/myAccentColor</item>
+            <item name="android:textColorPrimary">@color/myTextColorPrimary</item>
+            <item name="android:textColorSecondary">@color/myTextColorSecondary</item>
+            <item name="android:buttonStyle">@style/MyButtonStyle</item>
+            <item name="android:editTextStyle">@style/CustomEditTextStyle</item>
+            <!-- Otros atributos según sea necesario -->
+        </style>
+
+        <!-- Estilo personalizado para los botones -->
+        <style name="MyButtonStyle">
+            <item name="android:background">@drawable/my_button_background</item>
+            <item name="android:textColor">@color/myButtonTextColor</item>
+            <item name="android:padding">10dp</item>
+            <item name="android:textSize">16sp</item>
+        </style>
+
+   
+        <style name="CustomEditTextStyle">
+            <item name="android:padding">10dp</item>
+            <item name="android:textColor">#FFE8E9EA</item>
+            <item name="android:background">#FF81817B</item>
+            <item name="android:textSize">18sp</item>
+            <!-- Otros atributos que quieras personalizar -->
+        </style>
+
+   
+</resources>

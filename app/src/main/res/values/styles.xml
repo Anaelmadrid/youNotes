@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Archivo res/values/styles.xml -->
+
+<resources>
+
+    <!-- Estilo base para el tema de la aplicación -->
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault">
+        
+    </style>
+    <style name="Theme" parent="MyCustomTheme"></style>
+
+    <!-- Estilo para el tema de noche -->
+    <style name="AppTheme.Night" parent="@android:style/Theme.DeviceDefault">
+        <!-- Atributos para el tema de noche -->
+        <item name="android:windowBackground">@color/colorBackgroundNight</item>
+        <item name="android:colorPrimary">@color/colorPrimaryNight</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="android:colorAccent">@color/colorAccentNight</item>
+        <!-- Otros atributos según sea necesario -->
+    </style>
+</resources>

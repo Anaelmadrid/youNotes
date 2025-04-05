@@ -1,0 +1,38 @@
+plugins {
+    alias(libs.plugins.android.library)
+    id 'maven-publish'
+}
+
+
+android {
+    namespace "com.material.stylesK"
+    compileSdk 34
+    defaultConfig {
+        minSdk 33
+        targetSdk 34
+
+    }
+}
+
+dependencies {
+	implementation fileTree(dir: "libs", include: ["*.jar"])
+
+}
+publishing {
+    publications {
+        // Usa el componente adecuado disponible
+        release(MavenPublication) {
+
+            groupId = 'com.codeUtilS'
+            artifactId = 'mi-codeUtilS'
+            version = '1.0.0'
+			     // Asegúrate de que el archivo AAR se publique
+            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url = uri('/data/user/0/aidepro.top/no_backup/.aide/maven') // Ruta local
+        }
+    }
+}

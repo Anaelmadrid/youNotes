@@ -1,0 +1,51 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.notas_electro'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.notas_electro"
+        minSdk 33
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'
+
+    implementation project(':RgbColorM')
+    implementation project(':codeutils')
+    implementation project(':ListUtilsM')
+}
+// Tarea para ejecutar la clase Main desde el proyecto
+task runMain(type: JavaExec) {
+    main = 'com.notas_electro' // Cambia esto con el nombre de tu clase principal
+    classpath = files(android.sourceSets.main.java.srcDirs)
+}
