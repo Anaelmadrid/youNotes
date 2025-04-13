@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     private static Activity activity;
 
     final private int PERMISSION_REQUEST_CODE = 1;
-
+    private androidx.appcompat.widget.SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,6 +93,46 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        // Configurar el SearchView
+        MenuItem searchItem = menu.findItem(R.id.app_bar_search); // Asegúrate que coincide con el XML
+
+        if (searchItem != null) {
+            searchView = (androidx.appcompat.widget.SearchView) searchItem.getActionView();
+
+            if (searchView != null) {
+                // Configuración del SearchView
+                searchView.setQueryHint("Buscar notas...");
+                searchView.setMaxWidth(Integer.MAX_VALUE);
+
+                searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        filtrarNotas(newText);
+                        return true;
+                    }
+                });
+
+                // Esto asegura que el SearchView se expanda correctamente
+                searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        filtrarNotas(""); // Resetear el filtro al colapsar
+                        return true;
+                    }
+                });
+            }
+        }
         return true;
     }
 
@@ -123,6 +163,15 @@ public class MainActivity extends Activity {
         } else {
             cargarDatos(); // Vuelve a cargar si no hay datos
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (searchView != null && !searchView.isIconified()) {
+            searchView.setIconified(true);
+            return;
+        }
+        super.onBackPressed();
     }
 
     public static void ActualizarList(Context context) {
@@ -177,6 +226,7 @@ public class MainActivity extends Activity {
             datos = new ArrayList<>();
         } else {
             datos.clear();
+            adapter.resetearFiltro();
         }
 
         if (adapter == null) {
@@ -206,6 +256,24 @@ public class MainActivity extends Activity {
             }
         });
         adapter.notifyDataSetChanged();
+    }
+
+    public void filtrarNotas(String textoBusqueda) {  // Quitado el static
+        if (datos == null) return;
+
+        ArrayList<DatosView_Pojo> notasFiltradas = new ArrayList<>();
+
+        textoBusqueda = textoBusqueda.toLowerCase();
+
+        for (DatosView_Pojo nota : datos) {
+            if (nota.getTitleNota().toLowerCase().contains(textoBusqueda)) {
+                notasFiltradas.add(nota);
+            }
+        }
+
+        if (adapter != null) {  // Verificación de null añadida
+            adapter.filtrar(notasFiltradas);
+        }
     }
 
 }
